@@ -10,7 +10,7 @@ public:
   virtual ~Document();
 
   bool Open();
-  std::string GetName();
+  std::string Name();
 
 private:
   std::string m_Name;

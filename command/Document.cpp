@@ -20,7 +20,7 @@ bool Document::Open()
   return true;
 }
 
-std::string Document::GetName()
+std::string Document::Name()
 {
   return m_Name;
 }
