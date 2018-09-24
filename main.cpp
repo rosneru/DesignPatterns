@@ -21,8 +21,6 @@
 #include "strategy/Composition.hpp"
 
 #include "command/Application.hpp"
-#include "command/Document.hpp"
-#include "command/Command.hpp"
 
 using namespace std;
 

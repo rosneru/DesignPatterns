@@ -5,7 +5,7 @@
 #include <string>
 
 #include "Command.hpp"
-#include "Document.hpp"
+#include "DiffDocument.hpp"
 
 class Application
 {
@@ -14,10 +14,12 @@ public:
   virtual ~Application();
 
   void Run();
-  bool Add(Document* p_pDocument);
+  bool Add(DiffDocument* p_pDocument);
 
 
 private:
+  DiffDocument m_LeftDiffWindow;
+  DiffDocument m_RightDiffWindow;
   bool m_bExitRequested;
   std::vector<Command*> m_CommandList;
 

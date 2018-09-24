@@ -2,19 +2,19 @@
 #define CMD_FILEOPEN_HPP
 
 #include <list>
-#include "Application.hpp"
-#include "Command.hpp"
 
+#include "Command.hpp"
+#include "DiffDocument.hpp"
 
 class CmdFileOpen : public Command
 {
 public:
-  CmdFileOpen(std::string p_Name);
+  CmdFileOpen(std::string p_Name, DiffDocument& p_pDocument);
   virtual ~CmdFileOpen();
   virtual void Execute();
 
 private:
-  virtual const std::string askUserFilname();
+  DiffDocument& m_Document;
 };
 
 #endif // CMD_FILEOPEN_HPP

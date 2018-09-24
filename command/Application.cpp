@@ -8,10 +8,13 @@
 using namespace std;
 
 Application::Application()
+  : m_LeftDiffWindow("Left diff window"),
+    m_RightDiffWindow("Right diff window")
 {
   m_bExitRequested = false;
-  m_CommandList.push_back(new CmdFileOpen("Open the left file"));
-  m_CommandList.push_back(new CmdFileOpen("Open the right file"));
+
+  m_CommandList.push_back(new CmdFileOpen("Open the left file", m_LeftDiffWindow));
+  m_CommandList.push_back(new CmdFileOpen("Open the right file", m_RightDiffWindow));
   m_CommandList.push_back(new CmdQuit("Quit the application", m_bExitRequested));
 }
 
@@ -71,7 +74,7 @@ void Application::Run()
   cout << "Exiting the command pattern example." << endl << endl;
 }
 
-bool Application::Add(Document* p_pDocument)
+bool Application::Add(DiffDocument* p_pDocument)
 {
   return true;
 }
