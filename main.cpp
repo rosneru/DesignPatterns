@@ -23,9 +23,6 @@
 #include "command/Application.hpp"
 #include "command/Document.hpp"
 #include "command/Command.hpp"
-#include "command/OpenCommand.hpp"
-#include "command/PasteCommand.hpp"
-#include "command/MacroCommand.hpp"
 
 using namespace std;
 
@@ -114,8 +111,7 @@ void TestStrategy()
 void TestCommand()
 {
   Application application;
-  Command* pCmdOpen = new OpenCommand(&application);
-  pCmdOpen->Execute();
+  application.Run();
 }
 
 

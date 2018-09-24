@@ -1,6 +1,7 @@
 #ifndef COMMAND_HPP
 #define COMMAND_HPP
 
+#include <iostream>
 #include <string>
 
 class Command
@@ -8,9 +9,11 @@ class Command
 public:
   virtual ~Command();
   virtual void Execute() = 0;
+  virtual std::string Name();
 
 protected:
-  Command();
+  std::string m_Name;
+  Command(std::string p_Name);
 
 };
 
