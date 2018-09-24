@@ -1,8 +1,7 @@
 #include <cstdio>
 #include <iostream>
 
-#include "CmdOpenLeftFile.hpp"
-#include "CmdOpenRightFile.hpp"
+#include "CmdFileOpen.hpp"
 #include "CmdQuit.hpp"
 #include "Application.hpp"
 
@@ -11,8 +10,8 @@ using namespace std;
 Application::Application()
 {
   m_bExitRequested = false;
-  m_CommandList.push_back(new CmdOpenLeftFile("Open the left file"));
-  m_CommandList.push_back(new CmdOpenRightFile("Open the right file"));
+  m_CommandList.push_back(new CmdFileOpen("Open the left file"));
+  m_CommandList.push_back(new CmdFileOpen("Open the right file"));
   m_CommandList.push_back(new CmdQuit("Quit the application", m_bExitRequested));
 }
 
