@@ -3,6 +3,8 @@
 
 #include <cstdio>
 
+#include "command/Application.hpp"
+
 #include "composite/Bus.hpp"
 #include "composite/Cabinet.hpp"
 #include "composite/Card.hpp"
@@ -15,12 +17,15 @@
 #include "decorator/BorderDecorator.hpp"
 #include "decorator/RedColorDecorator.hpp"
 
+#include "observer/AnalogClock.hpp"
+#include "observer/DigitalClock.hpp"
+#include "observer/ClockTimer.hpp"
+
 #include "strategy/Compositor.hpp"
 #include "strategy/ArrayCompositor.hpp"
 #include "strategy/TriangularCompositor.hpp"
 #include "strategy/Composition.hpp"
 
-#include "command/Application.hpp"
 
 using namespace std;
 
@@ -113,6 +118,37 @@ void TestCommand()
 }
 
 
+void TestObserver()
+{
+
+
+  cout << "***************************************" << endl;
+  cout << "* Observer pattern                    *" << endl;
+  cout << "***************************************" << endl << endl;
+  cout << "  >> Created ClockTimer (subject)      " << endl;
+  cout << "  >> Created AnalogClock (observer)    " << endl;
+  cout << "  >> Created DigitlClock (observer)    " << endl;
+  cout << "                                       " << endl;
+  cout << "                                       " << endl;
+  cout << "  Please be patient. The application   " << endl;
+  cout << "  will wait for 20 seconds and quit    " << endl;
+  cout << "  aferwards.                           " << endl;
+  cout << "                                       " << endl;
+  cout << "  Meanwhile all messages you see come  " << endl;
+  cout << "  from the two observers               " << endl;
+  cout << "    AnalogClock and DigitalClock       " << endl;
+  cout << "  which are observing the subject      " << endl;
+  cout << "    ClockTimer                         " << endl;
+  cout << "  and getting notified each time       " << endl;
+  cout << "  ClockTimer has changed...            " << endl;
+
+  ClockTimer clockTimer;
+  AnalogClock analogClock(&clockTimer);
+  DigitalClock digitalClock(&clockTimer);
+  std::this_thread::sleep_for(std::chrono::seconds(20));
+}
+
+
 
 int main()
 {
@@ -128,6 +164,7 @@ int main()
     cout << "  2 ... Decorator pattern" << endl;
     cout << "  3 ... Strategy pattern" << endl;
     cout << "  4 ... Command pattern" << endl;
+    cout << "  5 ... Observer pattern" << endl;
     cout << "  q ... QUIT" << endl;
     cout << "> ";
 
@@ -153,6 +190,11 @@ int main()
 
       case '4':
         TestCommand();
+        cout << endl << endl;
+        break;
+
+      case '5':
+        TestObserver();
         cout << endl << endl;
         break;
 
