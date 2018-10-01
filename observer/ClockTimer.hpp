@@ -1,0 +1,4 @@
+#ifndef CLOCK_TIMER_HPP
+#define CLOCK_TIMER_HPP
+
+#endif // CLOCK_TIMER_HPP

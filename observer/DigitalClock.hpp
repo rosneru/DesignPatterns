@@ -1,0 +1,5 @@
+#ifndef DIGITAL_CLOCK_HPP
+#define DIGITAL_CLOCK_HPP
+
+
+#endif // DIGITAL_CLOCK_HPP

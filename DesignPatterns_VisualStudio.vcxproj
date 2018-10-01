@@ -37,6 +37,11 @@
     <ClCompile Include="decorator\Decorator.cpp" />
     <ClCompile Include="decorator\RedColorDecorator.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="observer\AnalogClock.cpp" />
+    <ClCompile Include="observer\ClockTimer.cpp" />
+    <ClCompile Include="observer\DigitalClock.cpp" />
+    <ClCompile Include="observer\Observer.cpp" />
+    <ClCompile Include="observer\Subject.cpp" />
     <ClCompile Include="strategy\ArrayCompositor.cpp" />
     <ClCompile Include="strategy\Composition.cpp" />
     <ClCompile Include="strategy\Compositor.cpp" />
@@ -61,6 +66,11 @@
     <ClInclude Include="decorator\Decorator.hpp" />
     <ClInclude Include="decorator\RedColorDecorator.hpp" />
     <ClInclude Include="decorator\VisualComponent.hpp" />
+    <ClInclude Include="observer\AnalogClock.hpp" />
+    <ClInclude Include="observer\ClockTimer.hpp" />
+    <ClInclude Include="observer\DigitalClock.hpp" />
+    <ClInclude Include="observer\Observer.hpp" />
+    <ClInclude Include="observer\Subject.hpp" />
     <ClInclude Include="strategy\ArrayCompositor.hpp" />
     <ClInclude Include="strategy\Composition.hpp" />
     <ClInclude Include="strategy\Compositor.hpp" />
@@ -71,6 +81,7 @@
     <Text Include="command\CMakeLists.txt" />
     <Text Include="composite\CMakeLists.txt" />
     <Text Include="decorator\CMakeLists.txt" />
+    <Text Include="observer\CMakeLists.txt" />
     <Text Include="strategy\CMakeLists.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

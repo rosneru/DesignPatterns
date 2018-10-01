@@ -1,0 +1,5 @@
+#ifndef ANALOG_CLOCK_HPP
+#define ANALOG_CLOCK_HPP
+
+
+#endif // ANALOG_CLOCK_HPP

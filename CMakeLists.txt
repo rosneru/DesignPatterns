@@ -10,6 +10,7 @@ set(APPLICATION_SOURCE
 add_subdirectory( "${PROJECT_SOURCE_DIR}/command" )
 add_subdirectory( "${PROJECT_SOURCE_DIR}/composite" )
 add_subdirectory( "${PROJECT_SOURCE_DIR}/decorator" )
+add_subdirectory( "${PROJECT_SOURCE_DIR}/observer" )
 add_subdirectory( "${PROJECT_SOURCE_DIR}/strategy" )
 #add_executable(${PROJECT_NAME} ${SRC_LIST})
 
