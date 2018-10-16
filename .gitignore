@@ -1,6 +1,7 @@
 # Ignoriere alle Build Ordner
 bin/
 obj/
+Debug/
 .vs/
 *.user
 *.suo
