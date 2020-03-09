@@ -5,6 +5,11 @@ Experiments and implementations based the Design Patterns book from
 Gamma, Helm, Johnson and Vlissides.
 
 ## Development environment
+### Dependencies
+To build the project a Linux system and the follwing tools are needed:
+- gcc >= 6 (e.g. on Debian install the package 'build-essential')
+- cmake >= 2.8
+
 ### Setup
 The project can be build using cmake:
 
@@ -23,8 +28,8 @@ by calling
 ### Build with VisualStudioCode
 
 The included .vscode/tasks.json is set up to build automatically if you
-hit *Ctrl + Shifh + b* in VSCode. After the build the unstripped binary 
-is copiedto the project dir automatically.
+hit *Ctrl + Shift + b* in VSCode. After building the unstripped binary 
+is copied to the project dir automatically.
 
 ### Debug with VisualStudioCode
 
