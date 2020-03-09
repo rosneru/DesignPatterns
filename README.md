@@ -1,15 +1,32 @@
-# README #
+# README
 
 ##  Overview ##
 Experiments and implementations based the Design Patterns book from 
 Gamma, Helm, Johnson and Vlissides.
 
-## Development environment ##
-The implementation uses both, *STL* and *C++11* features so an 
-appropriate compiler is needed.
+## Development environment
+### Setup
+The project can be build using cmake:
 
-For QTCreator it is set up as a CMake project. I've tested ist lastly 
-with QtCreator 4.4.1 and GCC 6.3 on Linux.
+First create a directory *build* parallel to the *src* directory and 
+enter it.
 
-For Visual Studio 2019 there's a solution file which is set to target 
-.Net framework 4.7.
+Then call cmake to let cmake create the Makefile
+
+    cmake .. 
+    
+After this the project can be compiled from within the build directory 
+by calling
+
+    make
+
+### Build with VisualStudioCode
+
+The included .vscode/tasks.json is set up to build automatically if you
+hit *Ctrl + Shifh + b* in VSCode. After the build the unstripped binary 
+is copiedto the project dir automatically.
+
+### Debug with VisualStudioCode
+
+The included .vscode/launch.json is set up to start debugging by 
+hitting *F5* from inside VSCode.

@@ -149,11 +149,9 @@ void TestObserver()
 }
 
 
-
 int main()
 {
   bool bExitRequested = false;
-
 
   do
   {
