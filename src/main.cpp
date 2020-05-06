@@ -80,7 +80,7 @@ void TestDecorator()
   cout << endl;
   cout << endl;
 
-  VisualComponent* pRedTextObject = new RedColorDecorator(pTextObject)  ;
+  VisualComponent* pRedTextObject = new RedColorDecorator(pTextObject);
   pRedTextObject->Draw();
 
   cout << endl;
@@ -100,7 +100,10 @@ void TestDecorator()
 
 void TestStrategy()
 {
-  string text = "Hallo, ich probiere hier einmal aus, ob der Text durch die verschiedenen Strategien (Compositoren) auch wirklich verschieden umgebrochen wird. ";
+  string text = "Hallo, ich probiere hier einmal aus, ob der Text "
+                "durch die verschiedenen Strategien (Compositoren) "
+                "auch wirklich verschieden umgebrochen wird. ";
+
   ArrayCompositor arrayCompositor;
   TriangularCompositor triangularCompositor;
 
