@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 
 project(Cpp_DesignPatterns)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
-
+set(default_build_type "Debug")
 
 add_executable(design_patterns
                command/Application.cpp
