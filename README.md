@@ -6,7 +6,7 @@ Gamma, Helm, Johnson and Vlissides.
 
 ## Development environment
 ### Dependencies
-To build the project a Linux system and the follwing tools are needed:
+To build the project a Linux system and the following tools are needed:
 - gcc >= 6 (e.g. on Debian install the package 'build-essential')
 - cmake >= 2.8
 
@@ -19,7 +19,11 @@ enter it.
 Then call cmake to let cmake create the Makefile
 
     cmake .. 
-    
+
+Or, if you also want to debug your code with gdb/VSCode, type:
+
+    cmake -DCMAKE_BUILD_TYPE=Debug ..
+
 After this the project can be compiled from within the build directory 
 by calling
 
