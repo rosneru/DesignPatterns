@@ -6,4 +6,4 @@ class OrExp
 
 };
 
-#endif // OR_EXP_HPP
+#endif

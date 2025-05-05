@@ -6,4 +6,4 @@ class AndExp
 
 };
 
-#endif // AND_EXP_HPP
+#endif
