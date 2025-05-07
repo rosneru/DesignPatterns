@@ -10,8 +10,8 @@ public:
   VariableExp(const char*);
   virtual ~VariableExp();
 
-  virtual bool Evaluate(Context&);
-  virtual BooleanExp* Replace(const char*, BooleanExp&);
+  virtual bool Evaluate(Context& context);
+  virtual BooleanExp* Replace(const char* pName, BooleanExp& exp);
   virtual BooleanExp* Copy() const;
 
 private:

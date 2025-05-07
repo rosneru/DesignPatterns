@@ -23,6 +23,7 @@ add_executable(design_patterns
                decorator/RedColorDecorator.cpp
                interpreter/AndExp.cpp
                interpreter/BooleanExp.cpp
+               interpreter/Constant.cpp
                interpreter/Context.cpp
                interpreter/OrExp.cpp
                interpreter/VariableExp.cpp
