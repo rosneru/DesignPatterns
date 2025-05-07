@@ -21,6 +21,12 @@
 #include "observer/DigitalClock.hpp"
 #include "observer/ClockTimer.hpp"
 
+#include "interpreter/AndExp.hpp"
+#include "interpreter/BooleanExp.hpp"
+#include "interpreter/Context.hpp"
+#include "interpreter/OrExp.hpp"
+#include "interpreter/VariableExp.hpp"
+
 #include "strategy/Compositor.hpp"
 #include "strategy/ArrayCompositor.hpp"
 #include "strategy/TriangularCompositor.hpp"
@@ -152,6 +158,22 @@ void TestObserver()
 }
 
 
+void TestInterpreterBoolean()
+{
+  cout << "  Interpreter for boolean expression" << endl;
+  cout << "    (true and x) or (y and (not x))" << endl << endl;
+  cout << "  with x =  false, y = true" << endl;
+
+  Context context;
+  
+  VariableExp x("X");
+  VariableExp y("Y");
+
+  // BooleanExp* pExpression = new OrExp(
+  //   new AndExp(new)
+  // );
+}
+
 int main()
 {
   bool bExitRequested = false;
@@ -166,6 +188,7 @@ int main()
     cout << "  3 ... Strategy pattern" << endl;
     cout << "  4 ... Command pattern" << endl;
     cout << "  5 ... Observer pattern" << endl;
+    cout << "  6 ... Interpreter pattern: boolean expression" << endl;
     cout << "  q ... QUIT" << endl;
     cout << "> ";
 
@@ -196,6 +219,11 @@ int main()
 
       case '5':
         TestObserver();
+        cout << endl << endl;
+        break;
+
+      case '6':
+        TestInterpreterBoolean();
         cout << endl << endl;
         break;
 
