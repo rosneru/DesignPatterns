@@ -32,3 +32,8 @@ BooleanExp* VariableExp::Copy() const
 {
   return new VariableExp(m_pName);
 }
+
+const char* VariableExp::GetName() const
+{
+  return m_pName;
+}

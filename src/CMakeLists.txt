@@ -21,11 +21,13 @@ add_executable(design_patterns
                decorator/ConcreteComponentTextObject.cpp
                decorator/Decorator.cpp
                decorator/RedColorDecorator.cpp
-               interpreter/AndExp.cpp
-               interpreter/BooleanExp.cpp
-               interpreter/Context.cpp
-               interpreter/OrExp.cpp
-               interpreter/VariableExp.cpp
+               interpreter-bool/AndExp.cpp
+               interpreter-bool/BooleanExp.cpp
+               interpreter-bool/Constant.cpp
+               interpreter-bool/Context.cpp
+               interpreter-bool/OrExp.cpp
+               interpreter-bool/NotExp.cpp
+               interpreter-bool/VariableExp.cpp
                observer/AnalogClock.cpp
                observer/ClockTimer.cpp
                observer/DigitalClock.cpp

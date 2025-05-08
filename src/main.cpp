@@ -21,6 +21,14 @@
 #include "observer/DigitalClock.hpp"
 #include "observer/ClockTimer.hpp"
 
+#include "interpreter-bool/AndExp.hpp"
+#include "interpreter-bool/BooleanExp.hpp"
+#include "interpreter-bool/Constant.hpp"
+#include "interpreter-bool/Context.hpp"
+#include "interpreter-bool/OrExp.hpp"
+#include "interpreter-bool/NotExp.hpp"
+#include "interpreter-bool/VariableExp.hpp"
+
 #include "strategy/Compositor.hpp"
 #include "strategy/ArrayCompositor.hpp"
 #include "strategy/TriangularCompositor.hpp"
@@ -130,12 +138,12 @@ void TestObserver()
   cout << "***************************************" << endl << endl;
   cout << "  >> Created ClockTimer (subject)      " << endl;
   cout << "  >> Created AnalogClock (observer)    " << endl;
-  cout << "  >> Created DigitlClock (observer)    " << endl;
+  cout << "  >> Created DigitalClock (observer)   " << endl;
   cout << "                                       " << endl;
   cout << "                                       " << endl;
   cout << "  Please be patient. The application   " << endl;
   cout << "  will wait for 20 seconds and quit    " << endl;
-  cout << "  aferwards.                           " << endl;
+  cout << "  afterwards.                          " << endl;
   cout << "                                       " << endl;
   cout << "  Meanwhile all messages you see come  " << endl;
   cout << "  from the two observers               " << endl;
@@ -152,10 +160,48 @@ void TestObserver()
 }
 
 
+void TestInterpreterBoolean()
+{
+  // Setup stream that bool bvalues are printed as `true` or `false`
+  cout.setf(std::ios::boolalpha);
+
+  cout << "  Interpreter for boolean expression" << endl;
+  cout << "    (true and x) or (y and (not x))" << endl << endl;
+  cout << "  with " << endl;
+  cout << "    x = false, y = true" << endl << endl;
+  
+  Context context;
+  
+  VariableExp* pX = new VariableExp("X");
+  VariableExp* pY = new VariableExp("Y");
+  
+  BooleanExp* pExpression = new OrExp(
+    new AndExp(new Constant(true), pX),
+    new AndExp(pY, new NotExp(pX))
+  );
+
+  context.Assign(pX, false);
+  context.Assign(pY, true);
+  
+  bool result = pExpression->Evaluate(context);
+  cout << "  ==> result: " << result << endl << endl;
+
+  VariableExp* pZ = new VariableExp("Z");
+  NotExp not_z(pZ);
+
+  BooleanExp* pReplacement = pExpression->Replace("Y", not_z);
+  context.Assign(pZ, true);
+
+  cout << "Now replacing y with not(z) and set" << endl;
+  cout << "    z = true" << endl << endl;
+
+  result = pReplacement->Evaluate(context);
+  cout << "  ==> result: " << result << endl;
+}
+
 int main()
 {
   bool bExitRequested = false;
-
   do
   {
     std::chrono::milliseconds sleepTimeMs(250);
@@ -166,6 +212,7 @@ int main()
     cout << "  3 ... Strategy pattern" << endl;
     cout << "  4 ... Command pattern" << endl;
     cout << "  5 ... Observer pattern" << endl;
+    cout << "  6 ... Interpreter pattern: boolean expression" << endl;
     cout << "  q ... QUIT" << endl;
     cout << "> ";
 
@@ -196,6 +243,11 @@ int main()
 
       case '5':
         TestObserver();
+        cout << endl << endl;
+        break;
+
+      case '6':
+        TestInterpreterBoolean();
         cout << endl << endl;
         break;
 
