@@ -21,13 +21,13 @@
 #include "observer/DigitalClock.hpp"
 #include "observer/ClockTimer.hpp"
 
-#include "interpreter/AndExp.hpp"
-#include "interpreter/BooleanExp.hpp"
-#include "interpreter/Constant.hpp"
-#include "interpreter/Context.hpp"
-#include "interpreter/OrExp.hpp"
-#include "interpreter/NotExp.hpp"
-#include "interpreter/VariableExp.hpp"
+#include "interpreter-bool/AndExp.hpp"
+#include "interpreter-bool/BooleanExp.hpp"
+#include "interpreter-bool/Constant.hpp"
+#include "interpreter-bool/Context.hpp"
+#include "interpreter-bool/OrExp.hpp"
+#include "interpreter-bool/NotExp.hpp"
+#include "interpreter-bool/VariableExp.hpp"
 
 #include "strategy/Compositor.hpp"
 #include "strategy/ArrayCompositor.hpp"
@@ -196,14 +196,12 @@ void TestInterpreterBoolean()
   cout << "    z = true" << endl << endl;
 
   result = pReplacement->Evaluate(context);
-  cout << "  ==> result: " << result << endl << endl;
+  cout << "  ==> result: " << result << endl;
 }
 
 int main()
 {
   bool bExitRequested = false;
-  TestInterpreterBoolean();
-  return 0;
   do
   {
     std::chrono::milliseconds sleepTimeMs(250);
