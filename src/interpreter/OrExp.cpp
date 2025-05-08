@@ -1,6 +1,8 @@
 #include "OrExp.hpp"
 
 OrExp::OrExp(BooleanExp* pOperand1, BooleanExp* pOperand2)
+: m_pOperand1(pOperand1)
+, m_pOperand2(pOperand2)
 {
 }
 

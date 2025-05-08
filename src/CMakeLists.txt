@@ -26,6 +26,7 @@ add_executable(design_patterns
                interpreter/Constant.cpp
                interpreter/Context.cpp
                interpreter/OrExp.cpp
+               interpreter/NotExp.cpp
                interpreter/VariableExp.cpp
                observer/AnalogClock.cpp
                observer/ClockTimer.cpp

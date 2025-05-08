@@ -1,13 +1,19 @@
 #ifndef CONTEXT_HPP
 #define CONTEXT_HPP
 
+#include <string>
+#include <map>
+
 class VariableExp;
 
 class Context
 {
 public:
-  bool Lookup(const char*) const;
-  void Assign(VariableExp*, bool);
+  bool Lookup(const char* pName) const;
+  void Assign(VariableExp* pVarExp, bool bValue);
+
+private:
+    std::map<std::string, bool> m_Variables;
 
 /* TODO: Change it like this: (??)
 class Context

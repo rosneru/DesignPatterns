@@ -1,12 +1,13 @@
+#include "VariableExp.hpp"
 #include "Context.hpp"
 
-bool Context::Lookup(const char*) const
+bool Context::Lookup(const char* pName) const
 {
-  // TODO
-  return false;
+  auto it = m_Variables.find(pName);
+  return it != m_Variables.end() ? it->second : false;
 }
 
-void Context::Assign(VariableExp*, bool)
+void Context::Assign(VariableExp* pVarExp, bool bValue)
 {
-  // TODO
+  m_Variables[pVarExp->GetName()] = bValue;
 }
